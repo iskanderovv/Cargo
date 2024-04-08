@@ -1,0 +1,121 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+
+.employee {
+    &__title {
+        @include title();
+    }
+
+    &-card__img {
+        max-width: 138px;
+        height: auto;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        align-items: center;
+        gap: 30px;
+        margin: 72px 0px 132px 0;
+    }
+
+    &__card {
+        width: 100%;
+        max-width: 585px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 32px 40px;
+        border-left: 51px solid vars.$green-color;
+        box-shadow: 0px 4px 15px 0px #00000026;
+        border-radius: 10px;
+    }
+
+    &-card-content__title {
+        @include subtitle();
+    }
+
+    &-card-content__text {
+        font-family: vars.$pts-regular;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        color: vars.$secondary-color;
+        position: relative;
+        padding: 5px 0 45px 0;
+    }
+
+    &-card-content__text::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        width: 86px;
+        height: 3px;
+        background: vars.$orange-color;
+    }
+
+    &-card-content__networks {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .employee {
+        &__title {
+            @include titleTablet();
+        }
+
+        &__cards {
+            margin: 56px 0px 209px 0;
+        }
+
+        &__card {
+            flex-direction: column;
+            align-items: start;
+            border-left: 30px solid vars.$green-color;
+            gap: 16px;
+            padding: 32px 24px;
+        }
+
+        &-card__img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        &__card:nth-child(5),
+        &__card:nth-child(6),
+        &__card:nth-child(7) {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:551px) {
+    .employee {
+        &__title {
+            @include smallScreenHeading();
+        }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 14px;
+            margin: 32px 0px 116px 0;
+        }
+
+        &__card {
+            flex-direction: row;
+            padding: 24px 16px;
+            border-left: 20px solid vars.$green-color;
+        }
+
+        &__card:nth-child(4) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+.sponsor {
+    &__title {
+        @include title();
+    }
+
+    &__names {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 90px 0px 130px 0;
+        gap: 71px 0;
+    }
+
+    &-names__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        height: 183px;
+        max-width: 257px;
+        padding-right: 73px;
+        border-right: 1px solid #D7D7DD;
+    }
+
+    &-names__img {
+        width: 50%;
+    }
+
+    &-names__title {
+        @include subtitle();
+    }
+}
