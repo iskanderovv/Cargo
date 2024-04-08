@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargo</title>
     <link rel="stylesheet" href="./dist/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -393,15 +394,52 @@
     <!-- video -->
     <div class="container">
         <section class="video">
-            <video id="myVideo" class="video__item" width="100%" height="auto" muted onclick="togglePlayPause()">
+            <video id="myVideo" class="video__item" width="100%" height="auto" onclick="togglePlayPause()">
                 <source src="./video/VID_20240408_174307.mp4">
                 Your browser does not support the video tag.
             </video>
         </section>
     </div>
 
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <a href="#">
+                    <img class="footer-content__img" src="./images/LOGO.svg" alt="logo">
+                </a>
+                <div class="footer__lists">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#">Каталог</a></li>
+                        <li class="footer__item"><a href="#">о компании</a></li>
+                        <li class="footer__item"><a href="#">Индивидуальная </a></li>
+                        <li class="footer__item"><a href="#">Партнерам</a></li>
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#">2D, 3D модели</a></li>
+                        <li class="footer__item"><a href="#">Шоу-румы</a></li>
+                        <li class="footer__item"><a href="#">Дилерам </a></li>
+                        <li class="footer__item"><a href="#">Контакты</a></li>
+                        <li class="footer__item"><a href="#">Конфигуратор</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <div class="footer-contact__networks">
+                        <a href="#"><img src="./images/insta.svg" alt="insta"></a>
+                        <a href="#"><img src="./images/facebook.svg" alt="facebook"></a>
+                    </div>
+                    <p class="footer-contact__num">+38 (099)-638-45-37</p>
+                    <button type="submit" class="footer-contact__button">Персональная консультация <i
+                            class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <p>© 1993–2021 Интернет-магазин «LOGO» — truck</p>
+            </div>
+        </div>
+    </footer>
 
-    
+
 
     <script>
         function togglePlayPause() {
