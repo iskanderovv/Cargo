@@ -46,9 +46,12 @@
 
 @media screen and (max-width:551px) {
     .client {
-        &__title{
+        padding: 32px 15px;
+
+        &__title {
             @include smallScreenHeading();
         }
+
         &__img-desktop {
             display: none !important;
         }

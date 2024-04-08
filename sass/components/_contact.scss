@@ -99,6 +99,7 @@
 
 @media screen and (max-width:551px) {
     .contact {
+        margin-bottom: 30px;
         &__title {
             @include smallScreenHeading();
 
