@@ -1,6 +1,11 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
 .video {
     &__item {
         margin-bottom: 166px;
+        height: auto;
+        width: 100%;
     }
 }
 
