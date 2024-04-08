@@ -1,0 +1,51 @@
+@mixin text() {
+    font-family: vars.$pts-regular;
+    font-size: 16px;
+    line-height: 24px;
+    color: vars.$secondary-color;
+}
+
+@mixin link() {
+    font-family: vars.$pts-bold;
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 3px solid vars.$orange-color;
+    padding-bottom: 1px;
+    color: vars.$primary-color;
+}
+
+@mixin subtitle() {
+    font-family: vars.$exo2;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    color: vars.$primary-color;
+}
+
+@mixin title() {
+    font-family: vars.$exo2;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    color: vars.$primary-color;
+}
+
+@mixin titleTablet(){
+    font-size: 44px;
+    line-height: 55px;
+}
+
+@mixin smallScreenHeading() {
+    font-size: 28px;
+    line-height: 35px;
+}
+
+@mixin smallScreenTitle() {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+@mixin smallScreenText() {
+    font-size: 15px;
+    line-height: 22px;
+}

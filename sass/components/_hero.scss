@@ -1,0 +1,94 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 109px 0px 67px 0 !important;
+
+    &-content__title {
+        font-family: vars.$exo2;
+        font-size: 52px;
+        font-weight: 600;
+        line-height: 65px;
+        margin-bottom: 40px;
+    }
+
+    &-content__text {
+        @include text();
+    }
+
+    &-content__link {
+        @include link();
+
+        margin-top: 40px;
+        display: inline-block;
+    }
+
+    &__img-desktop {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__img-tablet {
+        display: none;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width:991px) {
+    .hero {
+        padding: 109px 0px 41px 0 !important;
+        text-align: center;
+        flex-direction: column;
+
+        &-content__title {
+            font-size: 44px;
+            margin-bottom: 49px;
+        }
+
+        &-content__text {
+            font-size: 16px;
+        }
+
+        &-content__link {
+            margin-bottom: 73px;
+        }
+
+        &__img-desktop {
+            display: none;
+        }
+
+        &__img-tablet {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width:551px) {
+    .hero {
+        padding: 75px 0px 56px 0 !important;
+        text-align: left;
+
+        &-content__title {
+            font-size: 28px;
+            line-height: 35px;
+            margin-bottom: 32px;
+        }
+
+        &-content__text {
+            font-size: 15px;
+            line-height: 22.5px;
+        }
+
+        &-content__link {
+            margin-top: 32px;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+    }
+}

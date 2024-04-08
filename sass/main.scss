@@ -1,0 +1,14 @@
+@import './base/index';
+@import './components/hero';
+@import './components/hero-bottom';
+@import './components/field';
+@import './components/offer';
+@import './components/client';
+@import './components/delivery';
+
+
+.container{
+    max-width: 1240px;
+    padding: 0px 20px;
+    margin: 0 auto;
+}

@@ -1,0 +1,132 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+.field {
+    margin-bottom: 120px;
+
+    &__heading {
+        background: url('../../images/furaDesktop.png');
+        background-size: cover;
+        background-position: 170px;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 453px;
+        display: flex;
+        align-items: center;
+        padding: 0px 90px;
+        overflow: hidden;
+        margin-bottom: 72.5px;
+    }
+
+    &-heading__title {
+        @include title();
+
+        position: relative;
+        z-index: 10;
+        max-width: 352px;
+        color: #fff;
+    }
+
+    &-heading__title::before {
+        content: '';
+        position: absolute;
+        top: -264px;
+        left: -463px;
+        height: 1000px;
+        width: 1000px;
+        background: #0B7572;
+        transform: rotate(53deg);
+        z-index: -1;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 60px 0;
+    }
+
+    &-content__item {
+        display: flex;
+        gap: 0px 40px;
+        align-items: center;
+        max-width: 447px;
+    }
+
+    &-content-item-heading__title {
+        @include subtitle();
+
+        padding-bottom: 16px;
+    }
+
+    &-content-item-heading__text {
+        @include text();
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .field {
+        &-heading__title {
+            font-size: 44px;
+            line-height: 55px;
+            max-width: 288px;
+        }
+
+        &-heading__title::before {
+            top: -264px;
+            left: -640px;
+            height: 1000px;
+            width: 1000px;
+        }
+
+        &__content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: baseline;
+        }
+
+        &-content__item {
+            max-width: 500px;
+        }
+    }
+}
+
+@media screen and (max-width: 551px) {
+    .field {
+        text-align: left;
+
+        &__heading {
+            background: none;
+            height: auto;
+            margin-bottom: 48px;
+            padding: 0;
+        }
+
+        &-content__item {
+            >img {
+                width: 52px;
+                height: 52px;
+            }
+        }
+
+        &-heading__title {
+            color: vars.$primary-color;
+            max-width: 100%;
+            font-size: 28px;
+            line-height: 35px;
+        }
+
+        &-content-item-heading__title {
+            @include smallScreenTitle();
+            padding-bottom: 12px;
+        }
+
+        &-content-item-heading__text {
+            @include smallScreenText();
+        }
+
+        &-heading__title::before {
+            display: none;
+        }
+    }
+}

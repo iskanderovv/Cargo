@@ -1,0 +1,113 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+.offer {
+    margin-bottom: 100px;
+
+    &__title {
+        @include title();
+    }
+
+    &__text {
+        @include text();
+
+        padding: 32px 0px 56px 0;
+        max-width: 465px;
+    }
+
+    &__cards {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    &__card {
+        max-width: 393px;
+        box-shadow: 0px 4px 15px 0px #0000001F;
+        border-radius: 10px;
+    }
+
+    &-card__body {
+        padding: 24px 32px;
+    }
+
+    &-card__title {
+        @include subtitle();
+    }
+
+    &-card__text {
+        @include text();
+
+        padding: 16px 0px 32px 0;
+    }
+
+    &-card__cost {
+        @include link();
+    }
+
+    &-card__img {
+        width: 100%;
+        display: block;
+    }
+
+    .delivery-tablet,
+    .container-tablet {
+        display: none;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:991px) {
+
+    .offer {
+        &__cards {
+            flex-direction: column;
+        }
+
+        &__card {
+            max-width: 100%;
+        }
+
+        .delivery-dekstop,
+        .container-desktop,
+        &__card:last-child {
+            display: none;
+        }
+
+        .delivery-tablet,
+        .container-tablet {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width:551px) {
+    .offer {
+        &__card:nth-child(2) {
+            display: none;
+        }
+
+        &__title{
+            @include smallScreenHeading();
+        }
+
+        &__text {
+            @include smallScreenText();
+    
+            padding: 24px 0px 32px 0;
+            max-width: 100%
+        }
+        &-card__title{
+            @include smallScreenTitle();
+        }
+
+        &-card__text{
+            @include smallScreenText();
+        }
+
+        &-card__cost{
+            @include smallScreenText();
+        }
+    }
+}

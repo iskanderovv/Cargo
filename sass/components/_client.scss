@@ -1,0 +1,60 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+.client {
+    background: #0B7572;
+    padding: 85px 66px;
+    margin-top: 112px;
+    display: flex;
+    gap: 0px 20px;
+    justify-content: space-between;
+    margin-bottom: 120px;
+
+    &__title {
+        @include title();
+
+        color: #fff;
+    }
+
+    &__img-desktop {
+        display: block;
+        width: 50%;
+    }
+
+    &__img-small {
+        width: 100%;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .client {
+        flex-direction: column;
+
+        &__title {
+            @include titleTablet();
+
+            max-width: 328px;
+            margin-bottom: 48px;
+        }
+
+        &__img-desktop {
+            width: 100% !important;
+        }
+    }
+}
+
+@media screen and (max-width:551px) {
+    .client {
+        &__title{
+            @include smallScreenHeading();
+        }
+        &__img-desktop {
+            display: none !important;
+        }
+
+        &__img-small {
+            display: block !important;
+        }
+    }
+}
