@@ -1,0 +1,116 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+.contact {
+    margin-bottom: 46px;
+
+    &__title {
+        @include title();
+
+        margin-bottom: 72px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+        min-width: 300px;
+    }
+
+    &-content__info {
+        display: flex;
+        gap: 36px;
+    }
+
+    &-content-info__title {
+        font-family: vars.$pts-regular;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        color: vars.$secondary-color;
+    }
+
+    &-content-info__text {
+        @include subtitle();
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+    }
+
+    &-table__container {
+        background: #F9F9FB;
+        padding: 40px 48px 40px 48px;
+        max-width: 794px;
+        width: 100%;
+    }
+
+    &__table {
+        border-collapse: collapse;
+
+        tr {
+            border-bottom: 1px solid #E9EAF2;
+            padding-bottom: 6px;
+            display: flex;
+            gap: 56px;
+            margin-bottom: 32px;
+        }
+
+        tr:last-child {
+            border: none
+        }
+
+        th {
+            @include text();
+
+            max-width: 175px;
+            width: 100%;
+            text-align: left;
+        }
+
+        td {
+            font-family: vars.$exo2;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            color: vars.$primary-color
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contact {
+        margin-bottom: 90px;
+
+        &__title {
+            @include titleTablet();
+        }
+
+        &__item {
+            flex-direction: column;
+            align-items: start;
+            gap: 28px 0;
+        }
+    }
+}
+
+@media screen and (max-width:551px) {
+    .contact {
+        &__title {
+            @include smallScreenHeading();
+
+            margin-bottom: 56px;
+        }
+
+        &__table {
+            tr {
+                display: flex;
+                gap: 14px 0;
+                flex-direction: column;
+            }
+        }
+    }
+}
